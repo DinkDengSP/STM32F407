@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\CommonFunc"
+		},
+		{
+			"path": "..\\..\\CommonService"
+		},
+		{
+			"path": "..\\..\\Driver"
+		},
+		{
+			"path": "..\\..\\Third_Party"
+		},
+		{
+			"path": "..\\..\\UCOS_3.08"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"BoardSRAM.C": "cpp",
+			"MCU_SPI2.C": "cpp"
+		}
+	}
+}

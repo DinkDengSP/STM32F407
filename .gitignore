@@ -50,3 +50,14 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+*.crf
+WarShipBoard/ProjectCollection/Led/ProjectFiles/JLinkLog.txt
+WarShipBoard/ProjectCollection/Led/ProjectFiles/JLinkSettings.ini
+*.dbgconf
+*.scvd
+*.Dink
+WarShipBoard/ProjectCollection/HardWareCheckUCOS3.08/ProjectFiles/JLinkLog.txt
+WarShipBoard/ProjectCollection/HardWareCheckUCOS3.08/ProjectFiles/JLinkSettings.ini
+WarShipBoard/ProjectCollection/HardWareCheckUCOS3.08/ProjectFiles/Objects/ExtDll.iex
+*.dep
+*.htm
