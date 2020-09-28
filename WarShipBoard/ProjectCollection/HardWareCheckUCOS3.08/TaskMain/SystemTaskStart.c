@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 14:03:05
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-09-27 22:37:42
+**LastEditTime: 2020-09-28 23:42:22
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\SystemTaskStart.c
 **ModifyRecord1:    
 **ModifyRecord2:    
@@ -118,12 +118,20 @@ void BoardDeviceInit(void)
 {
     D_ERROR_CODE deviceInitResult = D_ERROR_CODE_NONE;
     //初始化LED灯
-        BoardLedInit(BOARD_LED_RED,BOARD_LED_LIGHT);
-        BoardLedInit(BOARD_LED_GREEN,BOARD_LED_LIGHT);
+        BoardLedInit(BOARD_LED_RED,OUTPUT_VALID);
+        BoardLedInit(BOARD_LED_GREEN,OUTPUT_VALID);
+    //初始化Beep
+        BoardBeepInit(OUTPUT_INVALID);
+    //打开蜂鸣器
+        BoardBeepSetState(OUTPUT_VALID);
+    //延时
+        CoreDelayMs(500);
+    //关闭蜂鸣器
+        BoardBeepSetState(OUTPUT_INVALID);
 
     //系统初始化完成,关闭灯光
-        BoardLedWrite(BOARD_LED_RED,BOARD_LED_DARK);
-        BoardLedWrite(BOARD_LED_GREEN,BOARD_LED_DARK);
+        BoardLedWrite(BOARD_LED_RED,OUTPUT_INVALID);
+        BoardLedWrite(BOARD_LED_GREEN,OUTPUT_INVALID);
 }
 
 

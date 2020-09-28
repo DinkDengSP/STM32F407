@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 21:31:01
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-09-27 21:41:20
+ *LastEditTime: 2020-09-28 23:19:12
  *FilePath: \HardWareCheckUCOS3.08\DriverConfig\OSConfig\os_cfg_app.h
  *ModifyRecord1:    
 ******************************************************************/
@@ -42,47 +42,35 @@
 **************************************************************************************************************************
 */
                                                                 /* ------------------ MISCELLANEOUS ------------------- */
-                                                                /* Stack size of ISR stack (number of CPU_STK elements) */
-#define  OS_CFG_ISR_STK_SIZE                                512u
-                                                                /* Maximum number of messages                           */
-#define  OS_CFG_MSG_POOL_SIZE                               128u
-                                                                /* Stack limit position in percentage to empty          */
-#define  OS_CFG_TASK_STK_LIMIT_PCT_EMPTY                    10u
-
-
-                                                                /* -------------------- IDLE TASK --------------------- */
-                                                                /* Stack size (number of CPU_STK elements)              */
-#define  OS_CFG_IDLE_TASK_STK_SIZE                          128u
-
-
-                                                                /* ------------------ STATISTIC TASK ------------------ */
-                                                                /* Priority                                             */
+/*中断任务堆栈*/                                                                
+#define  OS_CFG_ISR_STK_SIZE                                512u/* Stack size of ISR stack (number of CPU_STK elements) */
+/*系统消息池*/                                                              
+#define  OS_CFG_MSG_POOL_SIZE                               128u/* Maximum number of messages                           */
+/*堆栈安全比例*/                                                               
+#define  OS_CFG_TASK_STK_LIMIT_PCT_EMPTY                    10u/* Stack limit position in percentage to empty          */
+/*空闲任务堆栈*/
+#define  OS_CFG_IDLE_TASK_STK_SIZE                          128u/* Stack size (number of CPU_STK elements)              */
+ /*状态统计任务的优先级和堆栈*/                                                       
 #define  OS_CFG_STAT_TASK_PRIO                              ((OS_PRIO)(OS_CFG_PRIO_MAX-2u))
-                                                                /* Rate of execution (1 to 10 Hz)                       */
-#define  OS_CFG_STAT_TASK_RATE_HZ                           10u
-                                                                /* Stack size (number of CPU_STK elements)              */
 #define  OS_CFG_STAT_TASK_STK_SIZE                          256u
-
-
-                                                                /* ---------------------- TICKS ----------------------- */
-                                                                /* Tick rate in Hertz (10 to 1000 Hz)                   */
+/*状态统计任务调度频率*/                                                               
+#define  OS_CFG_STAT_TASK_RATE_HZ                           10u
+/*系统调度频率*/                                                            
 #define  OS_CFG_TICK_RATE_HZ                                1000u
-
-
-                                                                /* --------------------- TIMERS ----------------------- */
-                                                                /* Priority of 'Timer Task'                             */
+/*系统定时任务的优先级*/                                                             
 #define  OS_CFG_TMR_TASK_PRIO                               ((OS_PRIO)(OS_CFG_PRIO_MAX-3u))
-                                                                /* Stack size (number of CPU_STK elements)              */
+/*系统定时任务的堆栈*/                                                              
 #define  OS_CFG_TMR_TASK_STK_SIZE                           128u
 
-                                                                /* DEPRECATED - Rate for timers (10 Hz Typ.)            */
-                                                                /* The timer task now calculates its timeouts based     */
-                                                                /* on the timers in the list. It no longer runs at a    */
-                                                                /* static frequency.                                    */
-                                                                /* This define is included for compatibility reasons.   */
-                                                                /* It will determine the period of a timer tick.        */
-                                                                /* We recommend setting it to OS_CFG_TICK_RATE_HZ       */
-                                                                /* for new projects.                                    */
+/* DEPRECATED - Rate for timers (10 Hz Typ.)            */
+/* The timer task now calculates its timeouts based     */
+/* on the timers in the list. It no longer runs at a    */
+/* static frequency.                                    */
+/* This define is included for compatibility reasons.   */
+/* It will determine the period of a timer tick.        */
+/* We recommend setting it to OS_CFG_TICK_RATE_HZ       */
+/* for new projects.                                    */
+/*系统定时任务的运行频率*/
 #define  OS_CFG_TMR_TASK_RATE_HZ                            1u
 
 
