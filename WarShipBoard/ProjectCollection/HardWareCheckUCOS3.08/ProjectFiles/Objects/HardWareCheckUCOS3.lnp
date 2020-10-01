@@ -70,6 +70,7 @@
 ".\objects\boardw25q128.o"
 ".\objects\segger_rtt.o"
 ".\objects\segger_rtt_printf.o"
+".\objects\bget.o"
 ".\objects\cpu_a.o"
 ".\objects\cpu_c.o"
 ".\objects\bsp_user.o"

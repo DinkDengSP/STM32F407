@@ -1161,7 +1161,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>SeggerRTT</GroupName>
+          <GroupName>CommonFunc/SeggerRTT</GroupName>
           <Files>
             <File>
               <FileName>SEGGER_RTT.c</FileName>
@@ -1186,13 +1186,25 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>CommonFuncADT</GroupName>
+          <GroupName>CommonFunc/ADT</GroupName>
         </Group>
         <Group>
-          <GroupName>CommonFuncSystemUtil</GroupName>
+          <GroupName>CommonFunc/SystemUtil</GroupName>
+          <Files>
+            <File>
+              <FileName>bget.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\CommonFunc\SystemUtil\bget.c</FilePath>
+            </File>
+            <File>
+              <FileName>bget.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\CommonFunc\SystemUtil\bget.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
-          <GroupName>UCOS_uC-CPU_Port</GroupName>
+          <GroupName>UCOS/uC-CPU/Port</GroupName>
           <Files>
             <File>
               <FileName>cpu.h</FileName>
@@ -1222,7 +1234,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>UCOS_uC-CPU_Source</GroupName>
+          <GroupName>UCOS/uC-CPU/Source</GroupName>
           <Files>
             <File>
               <FileName>cpu_core.c</FileName>
@@ -1242,10 +1254,10 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>UCOS_uC-LIB_Port</GroupName>
+          <GroupName>UCOS/uC-LIB/Port</GroupName>
         </Group>
         <Group>
-          <GroupName>UCOS_uC-LIB_Source</GroupName>
+          <GroupName>UCOS/uC-LIB/Source</GroupName>
           <Files>
             <File>
               <FileName>lib_ascii.c</FileName>
@@ -1295,7 +1307,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>UCOS_uCOS-III_Port</GroupName>
+          <GroupName>UCOS/uCOS-III/Port</GroupName>
           <Files>
             <File>
               <FileName>os_cpu.h</FileName>
@@ -1320,7 +1332,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>UCOS_uCOS-III_Source</GroupName>
+          <GroupName>UCOS/uCOS-III/Source</GroupName>
           <Files>
             <File>
               <FileName>os.h</FileName>

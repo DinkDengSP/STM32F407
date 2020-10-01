@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 14:03:05
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-09-28 23:42:22
+**LastEditTime: 2020-10-02 00:01:25
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\SystemTaskStart.c
 **ModifyRecord1:    
 **ModifyRecord2:    
@@ -128,6 +128,22 @@ void BoardDeviceInit(void)
         CoreDelayMs(500);
     //关闭蜂鸣器
         BoardBeepSetState(OUTPUT_INVALID);
+    //初始化SRAM,并进行自检
+        BoardSRAM_Init();
+        do
+        {
+            deviceInitResult = BoardSRAM_SelfCheck();
+            if(deviceInitResult != D_ERROR_CODE_NONE)
+            {
+                //红灯闪烁
+                BoardLedToogle(BOARD_LED_RED);
+                //输出日志
+                SEGGER_RTT_printf(0,"BoardSRAM_SelfCheck Failed,ErrorCode = 0X%08X\r\n",deviceInitResult);
+                //延时等待
+                CoreDelayMs(500);
+            }
+        } while (deviceInitResult != D_ERROR_CODE_NONE);
+        
 
     //系统初始化完成,关闭灯光
         BoardLedWrite(BOARD_LED_RED,OUTPUT_INVALID);

@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 14:16:48
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-09-26 21:56:23
+ *LastEditTime: 2020-10-01 23:55:37
  *FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\CommonFunc\SystemUtil\ErrorCode.h
  *ModifyRecord1:    
  *ModifyRecord2:    
@@ -17,7 +17,8 @@
 //错误代码文件
 typedef enum D_ERROR_CODE
 {
-    D_ERROR_CODE_NONE   = 0X00000000,//无错误
+    D_ERROR_CODE_NONE           = 0X00000000,//无错误
+    D_ERROR_CODE_SRAM_CHECK     = 0X00000001,//板卡错误,SRAM校验错误
 }D_ERROR_CODE;
 
 #endif
