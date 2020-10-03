@@ -919,16 +919,6 @@
               <FilePath>..\..\..\Driver\DriverMCU\MCU_DAC.h</FilePath>
             </File>
             <File>
-              <FileName>MCU_ExtInt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\Driver\DriverMCU\MCU_ExtInt.c</FilePath>
-            </File>
-            <File>
-              <FileName>MCU_ExtInt.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\..\Driver\DriverMCU\MCU_ExtInt.h</FilePath>
-            </File>
-            <File>
               <FileName>MCU_IIC.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\Driver\DriverMCU\MCU_IIC.c</FilePath>
@@ -1007,6 +997,16 @@
               <FileName>MCU_Uart1.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\Driver\DriverMCU\MCU_Uart1.c</FilePath>
+            </File>
+            <File>
+              <FileName>MCU_EXTI.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Driver\DriverMCU\MCU_EXTI.c</FilePath>
+            </File>
+            <File>
+              <FileName>MCU_EXTI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverMCU\MCU_EXTI.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 14:03:05
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-03 15:39:15
+**LastEditTime: 2020-10-03 22:58:00
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\SystemTaskStart.c
 **ModifyRecord1:    
 **ModifyRecord2:    
@@ -165,6 +165,8 @@ void BoardDeviceInit(void)
                 CoreDelayMs(500);
             }
         } while (deviceInitResult != D_ERROR_CODE_NONE);
+    //按键轮询初始化
+        BoardKeyScanInit();
         
 
     //系统初始化完成,关闭灯光

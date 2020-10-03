@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 21:53:16
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-02 23:07:47
+**LastEditTime: 2020-10-03 22:54:40
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\ServiceSupport\ServiceTask\ServiceTaskHeart.c
 **ModifyRecord1:    
 ******************************************************************/
@@ -24,9 +24,8 @@ void TaskFuncServiceHeart(void *p_arg)
     p_arg = p_arg;
     while(1)
     {
-        CoreDelayMs(200);
+        CoreDelayMs(500);
         BoardLedToogle(BOARD_LED_RED);
-        SEGGER_RTT_WriteString(0,"Service Task Heart\r\n");
     }
 }
 

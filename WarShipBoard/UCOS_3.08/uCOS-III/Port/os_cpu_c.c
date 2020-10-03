@@ -637,8 +637,6 @@ void  OSTimeTickHook (void)
 void  OS_CPU_SysTickHandler  (void)
 {
     CPU_SR_ALLOC();
-
-
     CPU_CRITICAL_ENTER();
     OSIntEnter();                                               /* Tell uC/OS-III that we are starting an ISR           */
     CPU_CRITICAL_EXIT();

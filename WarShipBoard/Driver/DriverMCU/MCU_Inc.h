@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 14:20:12
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-09-26 22:18:11
+ *LastEditTime: 2020-10-03 16:57:11
  *FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverMCU\MCU_Inc.h
  *ModifyRecord1:    
  *ModifyRecord2:    
@@ -20,7 +20,7 @@
 #include "MCU_ADC.h"
 #include "MCU_DAC.h"
 #include "MCU_Can.h"
-#include "MCU_ExtInt.h"
+#include "MCU_EXTI.h"
 #include "MCU_IIC.h"
 #include "MCU_Random.h"
 #include "MCU_RTC.h"

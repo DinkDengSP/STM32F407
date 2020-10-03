@@ -61,3 +61,6 @@ WarShipBoard/ProjectCollection/HardWareCheckUCOS3.08/ProjectFiles/JLinkSettings.
 WarShipBoard/ProjectCollection/HardWareCheckUCOS3.08/ProjectFiles/Objects/ExtDll.iex
 *.dep
 *.htm
+*.axf
+WarShipBoard/ProjectCollection/HardWareCheckUCOS3.08/ProjectFiles/Objects/Objects.axf
+*.lnp
