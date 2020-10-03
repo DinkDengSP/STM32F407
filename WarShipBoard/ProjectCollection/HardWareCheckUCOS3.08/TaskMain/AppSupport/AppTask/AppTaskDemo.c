@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 21:54:18
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-03 22:54:33
+**LastEditTime: 2020-10-03 23:16:07
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\AppSupport\AppTask\AppTaskDemo.c
 **ModifyRecord1:    
 ******************************************************************/
@@ -25,24 +25,7 @@ void TaskFuncAppDemo(void *p_arg)
     while(1)
     {
         CoreDelayMs(500);
-        BoardLedToogle(BOARD_LED_GREEN);
-        //按键检测
-        if(SENSOR_VALID == BoardKeyScanGetState(BOARD_KEY_UP))
-        {
-            SEGGER_RTT_WriteString(0,"BOARD_KEY_UP\r\n");
-        }
-        if(SENSOR_VALID == BoardKeyScanGetState(BOARD_KEY_DOWN))
-        {
-            SEGGER_RTT_WriteString(0,"BOARD_KEY_DOWN\r\n");
-        }
-        if(SENSOR_VALID == BoardKeyScanGetState(BOARD_KEY_LEFT))
-        {
-            SEGGER_RTT_WriteString(0,"BOARD_KEY_LEFT\r\n");
-        }
-        if(SENSOR_VALID == BoardKeyScanGetState(BOARD_KEY_RIGHT))
-        {
-            SEGGER_RTT_WriteString(0,"BOARD_KEY_RIGHT\r\n");
-        }
+        
     }
 }
 

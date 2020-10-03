@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 14:03:05
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-03 22:58:00
+**LastEditTime: 2020-10-03 23:47:49
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\SystemTaskStart.c
 **ModifyRecord1:    
 **ModifyRecord2:    
@@ -112,6 +112,23 @@ void TaskFuncStart(void *p_arg)
         OSTaskDel((OS_TCB *)0, &os_err);
 }
 
+void BoardKeyUpEvent(void)
+{
+    SEGGER_RTT_WriteString(0,"BOARD_KEY_UP\r\n");
+}
+void BoardKeyDownEvent(void)
+{
+    SEGGER_RTT_WriteString(0,"BOARD_KEY_DOWN\r\n");
+}
+void BoardKeyLeftEvent(void)
+{
+    SEGGER_RTT_WriteString(0,"BOARD_KEY_LEFT\r\n");
+}
+void BoardKeyRightEvent(void)
+{
+    SEGGER_RTT_WriteString(0,"BOARD_KEY_RIGHT\r\n");
+}
+
 
 //板上外设初始化
 void BoardDeviceInit(void)
@@ -165,13 +182,20 @@ void BoardDeviceInit(void)
                 CoreDelayMs(500);
             }
         } while (deviceInitResult != D_ERROR_CODE_NONE);
-    //按键轮询初始化
-        BoardKeyScanInit();
+    //按键中断初始化
+        BoardKeyIntInit(BOARD_KEY_UP,INT_PRE_PRI_3,INT_SUB_PRI_3,BoardKeyUpEvent);
+        BoardKeyIntInit(BOARD_KEY_DOWN,INT_PRE_PRI_3,INT_SUB_PRI_3,BoardKeyDownEvent);
+        BoardKeyIntInit(BOARD_KEY_LEFT,INT_PRE_PRI_3,INT_SUB_PRI_3,BoardKeyLeftEvent);
+        BoardKeyIntInit(BOARD_KEY_RIGHT,INT_PRE_PRI_3,INT_SUB_PRI_3,BoardKeyRightEvent);
+    //独立看门狗中断
+        MCU_IWDG_Init(MCU_IWDG_DEFAULT_PRER,MCU_IWDG_DEFAULT_RLR);
         
 
     //系统初始化完成,关闭灯光
         BoardLedWrite(BOARD_LED_RED,OUTPUT_INVALID);
         BoardLedWrite(BOARD_LED_GREEN,OUTPUT_INVALID);
+    //系统启动完成  
+        SEGGER_RTT_WriteString(0,"BoardDeviceInit Success\r\n");
 }
 
 

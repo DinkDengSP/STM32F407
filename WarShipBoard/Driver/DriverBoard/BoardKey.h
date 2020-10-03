@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 14:24:06
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-10-03 22:51:15
+ *LastEditTime: 2020-10-03 23:04:58
  *FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverBoard\BoardKey.h
  *ModifyRecord1:    
 ******************************************************************/
@@ -26,6 +26,8 @@ void BoardKeyScanInit(void);
 //按键轮询获取按键状态
 SENSOR_STATE BoardKeyScanGetState(BOARD_KEY_NAME keyName);
 
+//按键中断初始化
+void BoardKeyIntInit(BOARD_KEY_NAME keyName,INT_PRE_PRI prePri,INT_SUB_PRI subPri,MCU_EXTI_IntProcessFuncPtr callBack);
 
 #endif
 

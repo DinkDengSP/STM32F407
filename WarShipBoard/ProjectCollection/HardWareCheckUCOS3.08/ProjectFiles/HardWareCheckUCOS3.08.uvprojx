@@ -1008,6 +1008,26 @@
               <FileType>5</FileType>
               <FilePath>..\..\..\Driver\DriverMCU\MCU_EXTI.h</FilePath>
             </File>
+            <File>
+              <FileName>MCU_IWDG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Driver\DriverMCU\MCU_IWDG.c</FilePath>
+            </File>
+            <File>
+              <FileName>MCU_IWDG.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverMCU\MCU_IWDG.h</FilePath>
+            </File>
+            <File>
+              <FileName>MCU_WWDG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Driver\DriverMCU\MCU_WWDG.c</FilePath>
+            </File>
+            <File>
+              <FileName>MCU_WWDG.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverMCU\MCU_WWDG.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

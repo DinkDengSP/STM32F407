@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 14:23:58
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-03 22:49:17
+**LastEditTime: 2020-10-03 23:13:53
 **FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverBoard\BoardKey.c
 **ModifyRecord1:    
 ******************************************************************/
@@ -38,8 +38,7 @@ SENSOR_STATE BoardKeyScanGetState(BOARD_KEY_NAME keyName)
             keyValidState = Bit_SET;
             break;
         default:
-            keyValidState = Bit_RESET;
-            break;
+            return SENSOR_INVALID;
     }
     //计算引脚IO
     MCU_PIN pinIndex;
@@ -58,11 +57,49 @@ SENSOR_STATE BoardKeyScanGetState(BOARD_KEY_NAME keyName)
             pinIndex = MCU_PIN_E_4;
             break;
         default:
-            pinIndex = MCU_PIN_A_0;
-            break;
+            return SENSOR_INVALID;
     }
     //读取
     if(keyValidState == MCU_PortReadSingle(pinIndex))return SENSOR_VALID;
     else return SENSOR_INVALID;
 }
 
+//按键中断初始化
+void BoardKeyIntInit(BOARD_KEY_NAME keyName,INT_PRE_PRI prePri,INT_SUB_PRI subPri,MCU_EXTI_IntProcessFuncPtr callBack)
+{
+    //计算引脚IO
+    MCU_PIN pinIndex;
+    GPIOOType_TypeDef ooType = GPIO_OType_PP;
+    GPIOPuPd_TypeDef pupdType = GPIO_PuPd_UP;
+    GPIOSpeed_TypeDef speedType = GPIO_Low_Speed;
+    EXTITrigger_TypeDef trigMode = EXTI_Trigger_Falling;
+    switch(keyName)
+    {
+        case BOARD_KEY_UP:
+            pinIndex = MCU_PIN_A_0;
+            pupdType = GPIO_PuPd_DOWN;
+            trigMode = EXTI_Trigger_Rising;
+            break;
+        case BOARD_KEY_DOWN:
+            pinIndex = MCU_PIN_E_3;
+            pupdType = GPIO_PuPd_UP;
+            trigMode = EXTI_Trigger_Falling;
+            break;
+        case BOARD_KEY_LEFT:
+            pinIndex = MCU_PIN_E_2;
+            pupdType = GPIO_PuPd_UP;
+            trigMode = EXTI_Trigger_Falling;
+            break;
+        case BOARD_KEY_RIGHT:
+            pinIndex = MCU_PIN_E_4;
+            pupdType = GPIO_PuPd_UP;
+            trigMode = EXTI_Trigger_Falling;
+            break;
+        default:
+            return;
+    }
+    //先清除以前的注册的中断
+    MCU_EXTI_Clear(pinIndex);
+    //注册中断
+    MCU_EXTI_Init(pinIndex,ooType,pupdType,speedType,trigMode,prePri,subPri,callBack);
+}
