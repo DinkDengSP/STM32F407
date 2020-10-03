@@ -398,50 +398,43 @@
     ==================
 */
 
-#define TestProg    20000	      /* Generate built-in test program
-					 if defined.  The value specifies
-					 how many buffer allocation attempts
-					 the test program should make. */
+/* Generate built-in test programif defined.  The value specifieshow many buffer allocation attemptshe test program should make. */
+/*定义是否进行bget内存管理库的测试程序,该测试程序会自动进行测试申请内存回收内存,并打印结果,数字是进行的测试次数*/
+//#define TestProg    20000	      
 
-#define SizeQuant   4		      /* Buffer allocation size quantum:
-					 all buffers allocated are a
-					 multiple of this size.  This
-					 MUST be a power of two. */
+/* Buffer allocation size quantum:all buffers allocated are amultiple of this size.  This MUST be a power of two. */
+/*缓冲区分配大小d对其：所有分配的缓冲区都是此大小的倍数。这个必须是2的幂。按16字节对齐*/
+#define SizeQuant   4		      
 
-#define BufDump     1		      /* Define this symbol to enable the
-					 bpoold() function which dumps the
-					 buffers in a buffer pool. */
+/* Define this symbol to enable the bpoold() function which dumps the buffers in a buffer pool. */
+/*定义此符号以启用bpoold（）函数转储缓冲池中的缓冲区。可以查看pool列表*/
+#define BufDump     0		      
 
-#define BufValid    1		      /* Define this symbol to enable the
-					 bpoolv() function for validating
-					 a buffer pool. */ 
+/* Define this symbol to enable the bpoolv() function for validatinga buffer pool. */ 
+/*定义此符号以启用bpoolv（）函数用于验证缓冲池。可以查看某个pool是否产生错误*/
+#define BufValid    0		      
 
-#define DumpData    1		      /* Define this symbol to enable the
-					 bufdump() function which allows
-					 dumping the contents of an allocated
-					 or free buffer. */
+/* Define this symbol to enable the bufdump() function which allows dumping the contents of an allocated or free buffer. */
+/*定义此符号以启用 bufdump（）函数允许转储分配的内容 或可用缓冲区。*/
+#define DumpData    0		      
 
-#define BufStats    1		      /* Define this symbol to enable the
-					 bstats() function which calculates
-					 the total free space in the buffer
-					 pool, the largest available
-					 buffer, and the total space
-					 currently allocated. */
+/* Define this symbol to enable the bstats() function which calculates the total free space in the bufferpool, the largest available
+** buffer, and the total spacecurrently allocated. */
+/*定义此符号以启用bstats（）函数计算缓冲区中的总可用空间游泳池，最大的缓冲区和总空间当前已分配。*/
+#define BufStats    1		      
 
-#define FreeWipe    1		      /* Wipe free buffers to a guaranteed
-					 pattern of garbage to trip up
-					 miscreants who attempt to use
-					 pointers into released buffers. */
+/* Wipe free buffers to a guaranteed pattern of garbage to trip upmiscreants who attempt to use pointers into released buffers. */
+/*使能擦出释放堆内存，清零保证安全性*/
+#define FreeWipe    1		      
 
-#define BestFit     1		      /* Use a best fit algorithm when
-					 searching for space for an
-					 allocation request.  This uses
-					 memory more efficiently, but
-					 allocation will be much slower. */
+/* Use a best fit algorithm when searching for space for an allocation request.  This uses
+** memory more efficiently, butallocation will be much slower. */
+/*使用最佳拟合算法寻找空间分配请求。这使用记忆效率更高，但是分配会慢很多。*/
+#define BestFit     1		      
 
-#define BECtl	    1		      /* Define this symbol to enable the
-					 bectl() function for automatic
-					 pool space control.  */
+/* Define this symbol to enable thebectl() function for automaticpool space control.  */
+/*定义此符号以启用bectl（）函数自动池空间控制。*/
+#define BECtl	    0		      
 
 #include <stdio.h>
 
@@ -452,7 +445,7 @@ extern char *sprintf();               /* Sun includes don't define sprintf */
 #endif
 
 #include <assert.h>
-#include <memory.h>
+#include <string.h>
 
 #ifdef BufDump			      /* BufDump implies DumpData */
 #ifndef DumpData

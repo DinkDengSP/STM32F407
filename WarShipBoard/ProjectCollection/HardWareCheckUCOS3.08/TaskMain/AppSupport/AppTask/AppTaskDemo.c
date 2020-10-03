@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 21:54:18
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-09-28 00:04:53
+**LastEditTime: 2020-10-02 23:08:01
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\AppSupport\AppTask\AppTaskDemo.c
 **ModifyRecord1:    
 ******************************************************************/
@@ -12,11 +12,11 @@
 //任务控制块,8字节对齐
 #pragma pack(8)
 //任务堆栈
-CPU_STK stackBufferTaskAppDemo[STK_SIZE_TASK_APP_DEMO];
+__attribute__((section (".RAM_CCM"))) CPU_STK stackBufferTaskAppDemo[STK_SIZE_TASK_APP_DEMO];
 #pragma pack()
 
 //任务控制块
-OS_TCB tcbTaskAppDemo;
+__attribute__((section (".RAM_CCM"))) OS_TCB tcbTaskAppDemo;
 //任务函数
 void TaskFuncAppDemo(void *p_arg)
 {

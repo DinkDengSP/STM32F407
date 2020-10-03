@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 21:46:12
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-09-26 22:40:04
+**LastEditTime: 2020-10-03 00:17:35
 **FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverCore\UtilFunc\CoreUtil.c
 **ModifyRecord1:    
 **ModifyRecord2:    
@@ -48,6 +48,27 @@ void CoreNVIC_SetGroupDefault(void)
 	NVIC_PriorityGroupConfig(SYSTEM_DEFAULT_NVIC_GROUP);
 }
 
+//锁定线程,关闭中断
+inline void ThreadLockInt(void)
+{
+	//获取当前控制寄存器的状态,中断状态下为0,非中断下返回非0
+	if(0 == __get_CONTROL())
+	{
+		//关闭全部中断
+		INTX_DISABLE();
+	}
+}
+
+//解锁线程,解锁中断
+inline void ThreadUnlockInt(void)
+{
+	//获取当前控制寄存器的状态,中断状态下为0,非中断下返回非0
+	if(0 == __get_CONTROL())
+	{
+		//打开全部中断
+		INTX_ENABLE();
+	}
+}
 
 
 

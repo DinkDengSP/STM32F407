@@ -71,6 +71,7 @@
 ".\objects\segger_rtt.o"
 ".\objects\segger_rtt_printf.o"
 ".\objects\bget.o"
+".\objects\usermemmanage.o"
 ".\objects\cpu_a.o"
 ".\objects\cpu_c.o"
 ".\objects\bsp_user.o"
@@ -106,7 +107,7 @@
 ".\objects\servicetaskheart.o"
 ".\objects\serviceimplheart.o"
 ".\objects\apptaskdemo.o"
---library_type=microlib --strict --scatter ".\Objects\HardWareCheckUCOS3.sct"
+--library_type=microlib --strict --scatter "..\..\..\Driver\DriverCore\Startup\STM32F407_Full.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
---list ".\Listings\HardWareCheckUCOS3.map" -o .\Objects\HardWareCheckUCOS3.08
+--list ".\Listings\Objects.map" -o .\Objects\Objects.axf

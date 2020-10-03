@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 21:47:12
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-09-26 22:36:20
+ *LastEditTime: 2020-10-03 00:18:05
  *FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverCore\UtilFunc\CoreUtil.h
  *ModifyRecord1:    
  *ModifyRecord2:    
@@ -41,6 +41,12 @@ void INTX_ENABLE(void);
 //addr:栈顶地址
 //set Main Stack value
 void MSR_MSP(uint32_t addr);
+
+//锁定线程,关闭中断
+void ThreadLockInt(void);
+
+//解锁线程,解锁中断
+void ThreadUnlockInt(void);
 
 
 

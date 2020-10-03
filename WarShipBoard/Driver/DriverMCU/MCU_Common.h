@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 14:20:06
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-09-28 23:29:46
+ *LastEditTime: 2020-10-03 00:44:18
  *FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverMCU\MCU_Common.h
  *ModifyRecord1:    
  *ModifyRecord2:    
@@ -16,6 +16,7 @@
 #include "CoreInc.h"
 #include "os.h"
 #include "ErrorCode.h"
+#include "UserMemManage.h"
 
 //传感器状态
 typedef enum SENSOR_STATE
