@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 14:26:44
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-03 16:40:21
+**LastEditTime: 2020-10-04 15:37:38
 **FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverBoard\BoardAT24CXX.c
 **ModifyRecord1:    
 ******************************************************************/
@@ -89,6 +89,8 @@ D_ERROR_CODE BoardAT24CXX_ReadOneByte(uint16_t addr, uint8_t *readDat)
         //ACK超时
         if (D_ERROR_CODE_NONE != userErrorCode)
         {
+            //产生一个停止条件
+            MCU_IIC_Stop();
             //释放信号量
             if (OSRunning)OSMutexPost(&mutexBoardAT24CXX, OS_OPT_POST_FIFO, &err);
             if (OSRunning)OSMutexPost(&mutexMCU_IIC, OS_OPT_POST_FIFO, &err);
@@ -107,6 +109,8 @@ D_ERROR_CODE BoardAT24CXX_ReadOneByte(uint16_t addr, uint8_t *readDat)
     //响应超时
     if (D_ERROR_CODE_NONE != userErrorCode)
     {
+        //产生一个停止条件
+        MCU_IIC_Stop();
         //释放信号量
         if (OSRunning)OSMutexPost(&mutexBoardAT24CXX, OS_OPT_POST_FIFO, &err);
         if (OSRunning)OSMutexPost(&mutexMCU_IIC, OS_OPT_POST_FIFO, &err);
@@ -118,6 +122,8 @@ D_ERROR_CODE BoardAT24CXX_ReadOneByte(uint16_t addr, uint8_t *readDat)
     //响应超时
     if (D_ERROR_CODE_NONE != userErrorCode)
     {
+        //产生一个停止条件
+        MCU_IIC_Stop();
         //释放信号量
         if (OSRunning)OSMutexPost(&mutexBoardAT24CXX, OS_OPT_POST_FIFO, &err);
         if (OSRunning)OSMutexPost(&mutexMCU_IIC, OS_OPT_POST_FIFO, &err);
@@ -132,6 +138,8 @@ D_ERROR_CODE BoardAT24CXX_ReadOneByte(uint16_t addr, uint8_t *readDat)
     //响应超时
     if (D_ERROR_CODE_NONE != userErrorCode)
     {
+        //产生一个停止条件
+        MCU_IIC_Stop();
         //释放信号量
         if (OSRunning)OSMutexPost(&mutexBoardAT24CXX, OS_OPT_POST_FIFO, &err);
         if (OSRunning)OSMutexPost(&mutexMCU_IIC, OS_OPT_POST_FIFO, &err);
@@ -172,6 +180,8 @@ D_ERROR_CODE BoardAT24CXX_WriteOneByte(uint16_t addr, uint8_t writeDat)
         //响应超时
         if (D_ERROR_CODE_NONE != userErrorCode)
         {
+            //产生一个停止条件
+            MCU_IIC_Stop();
             //释放信号量
             if (OSRunning)OSMutexPost(&mutexBoardAT24CXX, OS_OPT_POST_FIFO, &err);
             if (OSRunning)OSMutexPost(&mutexMCU_IIC, OS_OPT_POST_FIFO, &err);
@@ -189,6 +199,8 @@ D_ERROR_CODE BoardAT24CXX_WriteOneByte(uint16_t addr, uint8_t writeDat)
     //响应超时
     if (D_ERROR_CODE_NONE != userErrorCode)
     {
+        //产生一个停止条件
+        MCU_IIC_Stop();
         //释放信号量
         if (OSRunning)OSMutexPost(&mutexBoardAT24CXX, OS_OPT_POST_FIFO, &err);
         if (OSRunning)OSMutexPost(&mutexMCU_IIC, OS_OPT_POST_FIFO, &err);
@@ -200,6 +212,8 @@ D_ERROR_CODE BoardAT24CXX_WriteOneByte(uint16_t addr, uint8_t writeDat)
     //响应超时
     if (D_ERROR_CODE_NONE != userErrorCode)
     {
+        //产生一个停止条件
+        MCU_IIC_Stop();
         //释放信号量
         if (OSRunning)OSMutexPost(&mutexBoardAT24CXX, OS_OPT_POST_FIFO, &err);
         if (OSRunning)OSMutexPost(&mutexMCU_IIC, OS_OPT_POST_FIFO, &err);
@@ -211,6 +225,8 @@ D_ERROR_CODE BoardAT24CXX_WriteOneByte(uint16_t addr, uint8_t writeDat)
     //响应超时
     if (D_ERROR_CODE_NONE != userErrorCode)
     {
+        //产生一个停止条件
+        MCU_IIC_Stop();
         //释放信号量
         if (OSRunning)OSMutexPost(&mutexBoardAT24CXX, OS_OPT_POST_FIFO, &err);
         if (OSRunning)OSMutexPost(&mutexMCU_IIC, OS_OPT_POST_FIFO, &err);
@@ -230,6 +246,7 @@ D_ERROR_CODE BoardAT24CXX_WriteOneByte(uint16_t addr, uint8_t writeDat)
 //读取指定区间的数据
 D_ERROR_CODE BoardAT24CXX_ReadBufferLength(uint16_t startAddr, uint16_t length, uint8_t *readBuffer)
 {
+    OS_ERR err;
     //检查数据范围
     if ((startAddr + length) > MAX_AT_ADDR_SELF)
     {
@@ -238,14 +255,20 @@ D_ERROR_CODE BoardAT24CXX_ReadBufferLength(uint16_t startAddr, uint16_t length, 
     //开始读取数据,一个字节一个字节的读取
     uint16_t readIndex = 0;
     D_ERROR_CODE userErrorCode;
+    //请求互斥信号量,申请不到,任务挂起等待OS_OPT_PEND_BLOCKING
+    if (OSRunning)OSMutexPend(&mutexBoardAT24CXX, 0, OS_OPT_PEND_BLOCKING, 0, &err);
     for (readIndex = 0; readIndex < length; readIndex++)
     {
         userErrorCode = BoardAT24CXX_ReadOneByte(startAddr + readIndex, (uint8_t *)(readBuffer + readIndex));
         if (D_ERROR_CODE_NONE != userErrorCode)
         {
+            //释放信号量
+            if (OSRunning)OSMutexPost(&mutexBoardAT24CXX, OS_OPT_POST_FIFO, &err);
             return userErrorCode;
         }
     }
+    //释放信号量
+    if (OSRunning)OSMutexPost(&mutexBoardAT24CXX, OS_OPT_POST_FIFO, &err);
     //读取成功,返回完成
     return D_ERROR_CODE_NONE;
 }
@@ -253,6 +276,7 @@ D_ERROR_CODE BoardAT24CXX_ReadBufferLength(uint16_t startAddr, uint16_t length, 
 //写入指定区间的数据
 D_ERROR_CODE BoardAT24CXX_WriteBufferLength(uint16_t startAddr, uint16_t length, uint8_t *writeBuffer)
 {
+    OS_ERR err;
     //检查数据范围
     if ((startAddr + length) > MAX_AT_ADDR_SELF)
     {
@@ -261,14 +285,20 @@ D_ERROR_CODE BoardAT24CXX_WriteBufferLength(uint16_t startAddr, uint16_t length,
     //开始写入数据,一个字节一个字节的写入
     uint16_t writeIndex = 0;
     D_ERROR_CODE userErrorCode;
+    //请求互斥信号量,申请不到,任务挂起等待OS_OPT_PEND_BLOCKING
+    if (OSRunning)OSMutexPend(&mutexBoardAT24CXX, 0, OS_OPT_PEND_BLOCKING, 0, &err);
     for (writeIndex = 0; writeIndex < length; writeIndex++)
     {
         userErrorCode = BoardAT24CXX_WriteOneByte(startAddr + writeIndex, (*(writeBuffer + writeIndex)));
         if (D_ERROR_CODE_NONE != userErrorCode)
         {
+            //释放信号量
+            if (OSRunning)OSMutexPost(&mutexBoardAT24CXX, OS_OPT_POST_FIFO, &err);
             return userErrorCode;
         }
     }
+    //释放信号量
+    if (OSRunning)OSMutexPost(&mutexBoardAT24CXX, OS_OPT_POST_FIFO, &err);
     //写入完成
     return D_ERROR_CODE_NONE;
 }

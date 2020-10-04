@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER,ARM_MATH_LOOPUNROLL,NDEBUG</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\Driver\DriverCore\CMSIS;..\..\..\Driver\DriverCore\Math;..\..\..\Driver\DriverCore\Startup;..\..\..\Driver\DriverCore\StdLib\Inc;..\..\..\Driver\DriverCore\StdLib\Src;..\..\..\Driver\DriverCore\StdLibSupport;..\..\..\Driver\DriverCore\UtilFunc;..\..\..\Driver\DriverMCU;..\..\..\Driver\DriverBoard;..\..\..\CommonFunc\ADT;..\..\..\CommonFunc\SystemUtil;..\..\..\CommonFunc\SeggerRTT;..\..\..\CommonFunc;..\..\..\CommonService;..\DriverConfig\CoreConfig;..\DriverConfig\BoardConfig;..\DriverConfig\OSConfig;..\DriverConfig\UserConfig;..\TaskMain;..\TaskMain\ServiceSupport\ServiceTask;..\TaskMain\ServiceSupport\ServiceImpl;..\TaskMain\ServiceSupport\ServiceIpc;..\TaskMain\ServiceSupport\ServiceUtil;..\TaskMain\AppSupport\AppTask;..\TaskMain\AppSupport\AppImpl;..\TaskMain\AppSupport\AppIpc;..\TaskMain\AppSupport\AppUtil;..\..\..\UCOS_3.08\uC-CPU\Port;..\..\..\UCOS_3.08\uC-CPU\Source;..\..\..\UCOS_3.08\uC-LIB\Port;..\..\..\UCOS_3.08\uC-LIB\Source;..\..\..\UCOS_3.08\uCOS-III\Port;..\..\..\UCOS_3.08\uCOS-III\Source</IncludePath>
+              <IncludePath>..\..\..\Driver\DriverCore\CMSIS;..\..\..\Driver\DriverCore\Math;..\..\..\Driver\DriverCore\Startup;..\..\..\Driver\DriverCore\StdLib\Inc;..\..\..\Driver\DriverCore\StdLib\Src;..\..\..\Driver\DriverCore\StdLibSupport;..\..\..\Driver\DriverCore\UtilFunc;..\..\..\Driver\DriverMCU;..\..\..\Driver\DriverBoard;..\..\..\Driver\DriverBoard\MPU6050_eMPL;..\..\..\CommonFunc\ADT;..\..\..\CommonFunc\SystemUtil;..\..\..\CommonFunc\SeggerRTT;..\..\..\CommonFunc;..\..\..\CommonService;..\DriverConfig\CoreConfig;..\DriverConfig\BoardConfig;..\DriverConfig\OSConfig;..\DriverConfig\UserConfig;..\TaskMain;..\TaskMain\ServiceSupport\ServiceTask;..\TaskMain\ServiceSupport\ServiceImpl;..\TaskMain\ServiceSupport\ServiceIpc;..\TaskMain\ServiceSupport\ServiceUtil;..\TaskMain\AppSupport\AppTask;..\TaskMain\AppSupport\AppImpl;..\TaskMain\AppSupport\AppIpc;..\TaskMain\AppSupport\AppUtil;..\..\..\UCOS_3.08\uC-CPU\Port;..\..\..\UCOS_3.08\uC-CPU\Source;..\..\..\UCOS_3.08\uC-LIB\Port;..\..\..\UCOS_3.08\uC-LIB\Source;..\..\..\UCOS_3.08\uCOS-III\Port;..\..\..\UCOS_3.08\uCOS-III\Source</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1177,6 +1177,46 @@
               <FileName>BoardW25Q128.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\..\Driver\DriverBoard\BoardW25Q128.h</FilePath>
+            </File>
+            <File>
+              <FileName>BoardMPU6050Base.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverBoard\BoardMPU6050Base.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>DriverBoard/MPU6050_eMPL</GroupName>
+          <Files>
+            <File>
+              <FileName>dmpKey.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverBoard\MPU6050_eMPL\dmpKey.h</FilePath>
+            </File>
+            <File>
+              <FileName>dmpmap.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverBoard\MPU6050_eMPL\dmpmap.h</FilePath>
+            </File>
+            <File>
+              <FileName>inv_mpu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Driver\DriverBoard\MPU6050_eMPL\inv_mpu.c</FilePath>
+            </File>
+            <File>
+              <FileName>inv_mpu.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverBoard\MPU6050_eMPL\inv_mpu.h</FilePath>
+            </File>
+            <File>
+              <FileName>inv_mpu_dmp_motion_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Driver\DriverBoard\MPU6050_eMPL\inv_mpu_dmp_motion_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>inv_mpu_dmp_motion_driver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverBoard\MPU6050_eMPL\inv_mpu_dmp_motion_driver.h</FilePath>
             </File>
           </Files>
         </Group>

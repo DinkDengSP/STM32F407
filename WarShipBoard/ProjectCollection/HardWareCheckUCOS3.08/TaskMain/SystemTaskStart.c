@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 14:03:05
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-03 23:47:49
+**LastEditTime: 2020-10-05 00:23:05
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\SystemTaskStart.c
 **ModifyRecord1:    
 **ModifyRecord2:    
@@ -112,23 +112,6 @@ void TaskFuncStart(void *p_arg)
         OSTaskDel((OS_TCB *)0, &os_err);
 }
 
-void BoardKeyUpEvent(void)
-{
-    SEGGER_RTT_WriteString(0,"BOARD_KEY_UP\r\n");
-}
-void BoardKeyDownEvent(void)
-{
-    SEGGER_RTT_WriteString(0,"BOARD_KEY_DOWN\r\n");
-}
-void BoardKeyLeftEvent(void)
-{
-    SEGGER_RTT_WriteString(0,"BOARD_KEY_LEFT\r\n");
-}
-void BoardKeyRightEvent(void)
-{
-    SEGGER_RTT_WriteString(0,"BOARD_KEY_RIGHT\r\n");
-}
-
 
 //板上外设初始化
 void BoardDeviceInit(void)
@@ -182,11 +165,36 @@ void BoardDeviceInit(void)
                 CoreDelayMs(500);
             }
         } while (deviceInitResult != D_ERROR_CODE_NONE);
-    //按键中断初始化
-        BoardKeyIntInit(BOARD_KEY_UP,INT_PRE_PRI_3,INT_SUB_PRI_3,BoardKeyUpEvent);
-        BoardKeyIntInit(BOARD_KEY_DOWN,INT_PRE_PRI_3,INT_SUB_PRI_3,BoardKeyDownEvent);
-        BoardKeyIntInit(BOARD_KEY_LEFT,INT_PRE_PRI_3,INT_SUB_PRI_3,BoardKeyLeftEvent);
-        BoardKeyIntInit(BOARD_KEY_RIGHT,INT_PRE_PRI_3,INT_SUB_PRI_3,BoardKeyRightEvent);
+    //初始化MPU6050,并运行自检
+        BoardMPU6050_Init();
+        do
+        {
+            deviceInitResult = BoardMPU6050_ConfigAndCheck();
+            if(deviceInitResult != D_ERROR_CODE_NONE)
+            {
+                //红灯闪烁
+                BoardLedToogle(BOARD_LED_RED);
+                //输出日志
+                SEGGER_RTT_printf(0,"BoardMPU6050_ConfigAndCheck Failed,ErrorCode = 0X%08X\r\n",deviceInitResult);
+                //延时等待
+                CoreDelayMs(500);
+            }
+        } while (deviceInitResult != D_ERROR_CODE_NONE);
+        //启动DMP姿态计算功能
+        uint8_t dmpResult;
+        do
+        {
+            dmpResult = mpu_dmp_init();
+            if(dmpResult != 0)
+            {
+                //红灯闪烁
+                BoardLedToogle(BOARD_LED_RED);
+                //输出日志
+                SEGGER_RTT_printf(0,"mpu_dmp_init Failed,ErrorCode = 0X%08X\r\n",dmpResult);
+                //延时等待
+                CoreDelayMs(500);
+            }
+        } while (dmpResult != 0);
     //独立看门狗中断
         MCU_IWDG_Init(MCU_IWDG_DEFAULT_PRER,MCU_IWDG_DEFAULT_RLR);
         

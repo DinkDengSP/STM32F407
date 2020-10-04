@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 14:35:34
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-03 16:41:14
+**LastEditTime: 2020-10-05 00:29:37
 **FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverMCU\MCU_IIC.c
 **ModifyRecord1:    
 **ModifyRecord2:    
@@ -16,6 +16,8 @@
 
 //IIC总线访问需要获取的信号量
 OS_MUTEX mutexMCU_IIC;
+//IIC已经初始化过了的标志
+static uint8_t MCU_IIC_InitFlag = 0;
 
 //IO口方向控制
 //SDA切换为输出模式
@@ -37,17 +39,22 @@ OS_MUTEX mutexMCU_IIC;
 void MCU_IIC_PortInit(void)
 {
     OS_ERR err;
-    //PB8 PB9均设置为输出 初始化设置位高电平
-    //SCL
-    MCU_PortInit(MCU_PIN_B_8, GPIO_Mode_OUT, GPIO_OType_PP, GPIO_PuPd_UP, GPIO_Fast_Speed);
-    MCU_PortWriteSingle(MCU_PIN_B_8, Bit_SET);
-    //SDA
-    MCU_PortInit(MCU_PIN_B_9, GPIO_Mode_OUT, GPIO_OType_PP, GPIO_PuPd_UP, GPIO_Fast_Speed);
-    MCU_PortWriteSingle(MCU_PIN_B_9, Bit_SET);
-    //IIC信号量初始化
-	OSMutexCreate((OS_MUTEX*	)&mutexMCU_IIC,
-				  (CPU_CHAR*	)"mutexMCU_IIC",
-                  (OS_ERR*		)&err);
+    if(MCU_IIC_InitFlag == 0)
+    {
+        //PB8 PB9均设置为输出 初始化设置位高电平
+        //SCL
+        MCU_PortInit(MCU_PIN_B_8, GPIO_Mode_OUT, GPIO_OType_PP, GPIO_PuPd_UP, GPIO_Fast_Speed);
+        MCU_PortWriteSingle(MCU_PIN_B_8, Bit_SET);
+        //SDA
+        MCU_PortInit(MCU_PIN_B_9, GPIO_Mode_OUT, GPIO_OType_PP, GPIO_PuPd_UP, GPIO_Fast_Speed);
+        MCU_PortWriteSingle(MCU_PIN_B_9, Bit_SET);
+        //IIC信号量初始化
+        OSMutexCreate((OS_MUTEX*	)&mutexMCU_IIC,
+                    (CPU_CHAR*	)"mutexMCU_IIC",
+                    (OS_ERR*		)&err);
+    }
+    //设置初始化标志,防止反复初始化
+    MCU_IIC_InitFlag = 1;
 }
 
 //发送Start信号

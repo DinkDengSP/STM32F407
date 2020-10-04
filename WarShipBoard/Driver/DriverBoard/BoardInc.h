@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 14:24:12
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-09-26 23:05:06
+ *LastEditTime: 2020-10-05 00:20:41
  *FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverBoard\BoardInc.h
  *ModifyRecord1:    
 ******************************************************************/
@@ -20,6 +20,7 @@
 #include "BoardLed.h"
 #include "BoardLightSensor.h"
 #include "BoardMPU6050.h"
+#include "inv_mpu.h"
 #include "BoardRS232.h"
 #include "BoardRS485.h"
 #include "BoardSD.h"

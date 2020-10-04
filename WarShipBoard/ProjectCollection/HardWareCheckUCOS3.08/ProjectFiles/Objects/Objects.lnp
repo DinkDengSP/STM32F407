@@ -70,6 +70,8 @@
 ".\objects\boardsd.o"
 ".\objects\boardsram.o"
 ".\objects\boardw25q128.o"
+".\objects\inv_mpu.o"
+".\objects\inv_mpu_dmp_motion_driver.o"
 ".\objects\segger_rtt.o"
 ".\objects\segger_rtt_printf.o"
 ".\objects\bget.o"
