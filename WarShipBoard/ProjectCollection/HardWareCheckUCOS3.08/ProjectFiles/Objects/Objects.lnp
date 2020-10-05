@@ -75,6 +75,7 @@
 ".\objects\inv_mpu_dmp_motion_driver.o"
 ".\objects\segger_rtt.o"
 ".\objects\segger_rtt_printf.o"
+".\objects\adt_circlebytequeue.o"
 ".\objects\bget.o"
 ".\objects\usermemmanage.o"
 ".\objects\cpu_a.o"

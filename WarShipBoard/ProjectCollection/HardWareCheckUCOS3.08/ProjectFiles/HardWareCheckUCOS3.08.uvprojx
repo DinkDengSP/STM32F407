@@ -1262,6 +1262,23 @@
         </Group>
         <Group>
           <GroupName>CommonFunc/ADT</GroupName>
+          <Files>
+            <File>
+              <FileName>ADT_CircleByteQueue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\CommonFunc\ADT\ADT_CircleByteQueue.c</FilePath>
+            </File>
+            <File>
+              <FileName>ADT_CircleByteQueue.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\CommonFunc\ADT\ADT_CircleByteQueue.h</FilePath>
+            </File>
+            <File>
+              <FileName>ADT_Inc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\CommonFunc\ADT\ADT_Inc.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>CommonFunc/SystemUtil</GroupName>

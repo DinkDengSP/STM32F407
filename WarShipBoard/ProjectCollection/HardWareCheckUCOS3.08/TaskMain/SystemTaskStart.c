@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 14:03:05
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-05 13:16:44
+**LastEditTime: 2020-10-05 15:37:35
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\SystemTaskStart.c
 **ModifyRecord1:    
 **ModifyRecord2:    
@@ -128,6 +128,8 @@ void BoardDeviceInit(void)
         CoreDelayMs(500);
     //关闭蜂鸣器
         BoardBeepSetState(OUTPUT_INVALID);
+    //串口初始化
+        MCU_Uart1Init(115200,MCU_UART_LENGTH8,MCU_UART_STOPBIT1,MCU_UART_CHECK_MODE_NONE,MCU_UART_HARD_CONTROL_NONE,NULL);
     //初始化随机数发生器
         MCU_RandomInit();
     //内部内存管理和CCM内存管理初始化
@@ -219,6 +221,7 @@ void BoardDeviceInit(void)
         BoardLedWrite(BOARD_LED_GREEN,OUTPUT_INVALID);
     //系统启动完成  
         SEGGER_RTT_WriteString(0,"BoardDeviceInit Success\r\n");
+        ServicePrintf("Board SystemStart\r\n");
 }
 
 

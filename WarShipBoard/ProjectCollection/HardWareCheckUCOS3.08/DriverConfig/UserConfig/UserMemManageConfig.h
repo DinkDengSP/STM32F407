@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 21:51:24
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-10-05 00:42:54
+ *LastEditTime: 2020-10-05 15:35:11
  *FilePath: \HardWareCheckUCOS3.08\DriverConfig\UserConfig\UserMemManageConfig.h
  *ModifyRecord1:    
 ******************************************************************/
@@ -14,7 +14,7 @@
 //内存块大小为32字节
 #define SRAM_IN_BLOCK_SIZE			32 
 //最大管理内存
-#define SRAM_IN_MAX_SIZE			100*1024 
+#define SRAM_IN_MAX_SIZE			90*1024 
 //内存表大小
 #define SRAM_IN_ALLOC_TABLE_SIZE	(SRAM_IN_MAX_SIZE/SRAM_IN_BLOCK_SIZE) 
 
