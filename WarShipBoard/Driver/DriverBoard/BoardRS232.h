@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 14:36:57
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-10-05 20:42:22
+ *LastEditTime: 2020-10-05 20:46:59
  *FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverBoard\BoardRS232.h
  *ModifyRecord1:    
 ******************************************************************/
@@ -18,13 +18,13 @@ typedef enum RS232_NAME
 }RS232_NAME;
 
 //串口初始化
-void BoardRS_Init(RS232_NAME rsPort,uint32_t baud, MCU_UART_LENGTH length, MCU_UART_STOPBIT stopBit,MCU_UART_CHECK_MODE checkMode, MCU_UART_HARD_CONTROL hardWareControl, MCU_UartRecvIntProcFunc rxCallBack);
+void BoardRS232_Init(RS232_NAME rsPort,uint32_t baud, MCU_UART_LENGTH length, MCU_UART_STOPBIT stopBit,MCU_UART_CHECK_MODE checkMode, MCU_UART_HARD_CONTROL hardWareControl, MCU_UartRecvIntProcFunc rxCallBack);
 
 //串口发送数组
-void BoardRS_SendBuffer(RS232_NAME rsPort,uint8_t* bufferStartPtr,uint16_t sendLength);
+void BoardRS232_SendBuffer(RS232_NAME rsPort,uint8_t* bufferStartPtr,uint16_t sendLength);
 
 //串口发送字符串
-void BoardRS_SendString(RS232_NAME rsPort,uint8_t* stringStartPtr);
+void BoardRS232_SendString(RS232_NAME rsPort,uint8_t* stringStartPtr);
 
 
 #endif

@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 14:03:05
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-05 20:37:41
+**LastEditTime: 2020-10-05 20:57:44
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\SystemTaskStart.c
 **ModifyRecord1:    
 **ModifyRecord2:    
@@ -130,7 +130,7 @@ void BoardDeviceInit(void)
         BoardBeepSetState(OUTPUT_INVALID);
     //串口初始化
         MCU_Uart1Init(115200,MCU_UART_LENGTH8,MCU_UART_STOPBIT1,MCU_UART_CHECK_MODE_NONE,MCU_UART_HARD_CONTROL_NONE,NULL);
-        MCU_Uart2Init(115200,MCU_UART_LENGTH8,MCU_UART_STOPBIT1,MCU_UART_CHECK_MODE_NONE,MCU_UART_HARD_CONTROL_NONE,NULL);
+        BoardRS485_Init(115200,MCU_UART_LENGTH8,MCU_UART_STOPBIT1,MCU_UART_CHECK_MODE_NONE,MCU_UART_HARD_CONTROL_NONE,NULL);
         MCU_Uart3Init(115200,MCU_UART_LENGTH8,MCU_UART_STOPBIT1,MCU_UART_CHECK_MODE_NONE,MCU_UART_HARD_CONTROL_NONE,NULL);
     //初始化随机数发生器
         MCU_RandomInit();
@@ -224,7 +224,9 @@ void BoardDeviceInit(void)
     //系统启动完成  
         SEGGER_RTT_WriteString(0,"BoardDeviceInit Success\r\n");
         ServicePrintf("Board SystemStart1\r\n");
+        BoardRS485_SendString((uint8_t*)"Board SystemStart1\r\n");
         ServicePrintf("Board SystemStart2\r\n");
+        BoardRS485_SendString((uint8_t*)"Board SystemStart2\r\n");
 }
 
 

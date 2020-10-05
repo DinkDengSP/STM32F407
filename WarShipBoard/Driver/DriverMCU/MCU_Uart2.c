@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-10-05 18:16:15
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-05 19:32:17
+**LastEditTime: 2020-10-05 20:55:38
 **FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverMCU\MCU_Uart2.c
 **ModifyRecord1:    
 ******************************************************************/
@@ -194,6 +194,16 @@ void MCU_Uart2SendBuffer(uint8_t* bufferStartPtr,uint16_t sendLength)
     if (OSRunning)OSMutexPost(&mutexMCU_Uart2, OS_OPT_POST_FIFO, &err);
 }
 
+//串口发送数组,等待发送完成
+void MCU_Uart2SendBufferWhileOver(uint8_t* bufferStartPtr,uint16_t sendLength)
+{
+    MCU_Uart2SendBuffer(bufferStartPtr,sendLength);
+    while(flagUart2DMA != 0)
+    {
+        CoreDelayMinTick();
+    }
+}
+
 //串口发送字符串
 void MCU_Uart2SendString(uint8_t* stringStartPtr)
 {
@@ -203,6 +213,16 @@ void MCU_Uart2SendString(uint8_t* stringStartPtr)
         return;
     }
     MCU_Uart2SendBuffer(stringStartPtr, (uint16_t)stringLength);
+}
+
+//串口发送字符串,等待发送完成
+void MCU_Uart2SendStringWhileOver(uint8_t* stringStartPtr)
+{
+    MCU_Uart2SendString(stringStartPtr);
+    while(flagUart2DMA != 0)
+    {
+        CoreDelayMinTick();
+    }
 }
 
 //串口发送字符串,带格式化

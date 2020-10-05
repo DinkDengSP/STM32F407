@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 14:21:10
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-10-05 20:03:25
+ *LastEditTime: 2020-10-05 20:53:56
  *FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverMCU\MCU_Uart.h
  *ModifyRecord1:    
  *ModifyRecord2:    
@@ -84,8 +84,12 @@ int MCU_Uart1Printf(const char *format, ...);
 void MCU_Uart2Init(uint32_t baud, MCU_UART_LENGTH length, MCU_UART_STOPBIT stopBit,MCU_UART_CHECK_MODE checkMode, MCU_UART_HARD_CONTROL hardWareControl, MCU_UartRecvIntProcFunc rxCallBack);
 //串口发送数组
 void MCU_Uart2SendBuffer(uint8_t* bufferStartPtr,uint16_t sendLength);
+//串口发送数组,等待发送完成
+void MCU_Uart2SendBufferWhileOver(uint8_t* bufferStartPtr,uint16_t sendLength);
 //串口发送字符串
 void MCU_Uart2SendString(uint8_t* stringStartPtr);
+//串口发送字符串,等待发送完成
+void MCU_Uart2SendStringWhileOver(uint8_t* stringStartPtr);
 //串口发送字符串,带格式化
 int MCU_Uart2Printf(const char *format, ...);
 
