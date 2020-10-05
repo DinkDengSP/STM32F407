@@ -1028,6 +1028,16 @@
               <FileType>5</FileType>
               <FilePath>..\..\..\Driver\DriverMCU\MCU_WWDG.h</FilePath>
             </File>
+            <File>
+              <FileName>MCU_Flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Driver\DriverMCU\MCU_Flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>MCU_Flash.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverMCU\MCU_Flash.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

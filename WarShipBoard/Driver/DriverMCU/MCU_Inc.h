@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 14:20:12
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-10-03 23:29:49
+ *LastEditTime: 2020-10-05 14:08:37
  *FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverMCU\MCU_Inc.h
  *ModifyRecord1:    
  *ModifyRecord2:    
@@ -29,7 +29,7 @@
 #include "MCU_Uart.h"
 #include "MCU_IWDG.h"
 #include "MCU_WWDG.h"
-
+#include "MCU_Flash.h"
 
 #endif
 

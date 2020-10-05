@@ -56,6 +56,7 @@
 ".\objects\mcu_exti.o"
 ".\objects\mcu_iwdg.o"
 ".\objects\mcu_wwdg.o"
+".\objects\mcu_flash.o"
 ".\objects\boardat24cxx.o"
 ".\objects\boardbeep.o"
 ".\objects\boardds18b20.o"

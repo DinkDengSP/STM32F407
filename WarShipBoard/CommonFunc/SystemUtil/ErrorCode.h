@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 14:16:48
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-10-05 13:14:17
+ *LastEditTime: 2020-10-05 14:07:47
  *FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\CommonFunc\SystemUtil\ErrorCode.h
  *ModifyRecord1:    
  *ModifyRecord2:    
@@ -29,6 +29,9 @@ typedef enum D_ERROR_CODE
     D_ERROR_CODE_W25QXX_ID_CHECK    = 0X00000009,//W25QXX芯片ID检测失败
     D_ERROR_CODE_W25QXX_ADDR_RANGE  = 0X0000000A,//W25QXX芯片的地址错误
     D_ERROR_CODE_W25QXX_RW_CHECK    = 0X0000000B,//W25QXX芯片读写失败
+    D_ERROR_CODE_MCU_FLASH_ADDR     = 0X0000000C,//flash地址不合标准
+    D_ERROR_CODE_MCU_FLASH_ERASE    = 0X0000000D,//Flash擦除错误
+    D_ERROR_CODE_MCU_FLASH_WRITE    = 0X0000000E,//flash写入失败
 }D_ERROR_CODE;
 
 #endif
