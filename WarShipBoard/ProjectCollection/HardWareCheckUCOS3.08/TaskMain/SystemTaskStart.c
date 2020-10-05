@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 14:03:05
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-05 00:23:05
+**LastEditTime: 2020-10-05 13:16:44
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\SystemTaskStart.c
 **ModifyRecord1:    
 **ModifyRecord2:    
@@ -195,6 +195,21 @@ void BoardDeviceInit(void)
                 CoreDelayMs(500);
             }
         } while (dmpResult != 0);
+    //SPI Flash W25QXX初始化,同时自检
+        W25QXX_Init();
+        do
+        {
+            deviceInitResult = W25QXX_SelfCheck();
+            if(deviceInitResult != D_ERROR_CODE_NONE)
+            {
+                //红灯闪烁
+                BoardLedToogle(BOARD_LED_RED);
+                //输出日志
+                SEGGER_RTT_printf(0,"W25QXX_SelfCheck Failed,ErrorCode = 0X%08X\r\n",deviceInitResult);
+                //延时等待
+                CoreDelayMs(500);
+            }
+        } while (deviceInitResult != D_ERROR_CODE_NONE);
     //独立看门狗中断
         MCU_IWDG_Init(MCU_IWDG_DEFAULT_PRER,MCU_IWDG_DEFAULT_RLR);
         

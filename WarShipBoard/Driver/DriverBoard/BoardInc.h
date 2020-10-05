@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 14:24:12
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-10-05 00:20:41
+ *LastEditTime: 2020-10-05 11:17:29
  *FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverBoard\BoardInc.h
  *ModifyRecord1:    
 ******************************************************************/
@@ -25,7 +25,7 @@
 #include "BoardRS485.h"
 #include "BoardSD.h"
 #include "BoardSRAM.h"
-#include "BoardW25Q128.h"
+#include "BoardW25QXX.h"
 
 #endif
 

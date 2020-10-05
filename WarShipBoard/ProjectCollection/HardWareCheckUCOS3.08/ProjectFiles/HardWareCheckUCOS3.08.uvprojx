@@ -1169,19 +1169,24 @@
               <FilePath>..\..\..\Driver\DriverBoard\BoardSRAM.h</FilePath>
             </File>
             <File>
-              <FileName>BoardW25Q128.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\Driver\DriverBoard\BoardW25Q128.c</FilePath>
-            </File>
-            <File>
-              <FileName>BoardW25Q128.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\..\Driver\DriverBoard\BoardW25Q128.h</FilePath>
-            </File>
-            <File>
               <FileName>BoardMPU6050Base.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\..\Driver\DriverBoard\BoardMPU6050Base.h</FilePath>
+            </File>
+            <File>
+              <FileName>BoardW25QXX.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Driver\DriverBoard\BoardW25QXX.c</FilePath>
+            </File>
+            <File>
+              <FileName>BoardW25QXX.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverBoard\BoardW25QXX.h</FilePath>
+            </File>
+            <File>
+              <FileName>BoardW25QXXBase.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverBoard\BoardW25QXXBase.h</FilePath>
             </File>
           </Files>
         </Group>

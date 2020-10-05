@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 14:16:48
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-10-04 22:45:20
+ *LastEditTime: 2020-10-05 13:14:17
  *FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\CommonFunc\SystemUtil\ErrorCode.h
  *ModifyRecord1:    
  *ModifyRecord2:    
@@ -26,6 +26,9 @@ typedef enum D_ERROR_CODE
     D_ERROR_CODE_EXTI_USED_EXIST    = 0X00000006,//想要设置的外部中断已经在使用中
     D_ERROR_CODE_EXTI_CALLBACK_NULL = 0X00000007,//中断回调函数为空
     D_ERROR_CODE_MPU6050_ID_CHECK   = 0X00000008,//MPU6050芯片ID检测失败
+    D_ERROR_CODE_W25QXX_ID_CHECK    = 0X00000009,//W25QXX芯片ID检测失败
+    D_ERROR_CODE_W25QXX_ADDR_RANGE  = 0X0000000A,//W25QXX芯片的地址错误
+    D_ERROR_CODE_W25QXX_RW_CHECK    = 0X0000000B,//W25QXX芯片读写失败
 }D_ERROR_CODE;
 
 #endif

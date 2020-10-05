@@ -69,7 +69,7 @@
 ".\objects\boardrs485.o"
 ".\objects\boardsd.o"
 ".\objects\boardsram.o"
-".\objects\boardw25q128.o"
+".\objects\boardw25qxx.o"
 ".\objects\inv_mpu.o"
 ".\objects\inv_mpu_dmp_motion_driver.o"
 ".\objects\segger_rtt.o"
