@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 21:50:02
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-10-05 19:08:15
+ *LastEditTime: 2020-10-06 01:20:51
  *FilePath: \HardWareCheckUCOS3.08\DriverConfig\CoreConfig\CoreNVIC_Prio.h
  *ModifyRecord1:    
 ******************************************************************/
@@ -16,6 +16,11 @@
 
 //系统内部NVIC中断的优先级设定
 /*****************************不会调用系统内核函数的中断优先级************************************/
+//中断抢占优先级,DMA 串口1
+#define SDIO_PREEMPT_PRIORITY               INT_PRE_PRI_0
+//中断子优先级
+#define SDIO_SUB_PRIORITY                   INT_SUB_PRI_1
+
 //中断抢占优先级,DMA 串口1
 #define MCU_DMA2_STREAM7_PREE_PRI           INT_PRE_PRI_1
 //中断子优先级

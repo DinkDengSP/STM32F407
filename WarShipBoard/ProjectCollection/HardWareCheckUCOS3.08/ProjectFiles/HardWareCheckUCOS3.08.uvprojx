@@ -1048,6 +1048,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\Driver\DriverMCU\MCU_Uart3.c</FilePath>
             </File>
+            <File>
+              <FileName>MCU_SDIO_Base.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverMCU\MCU_SDIO_Base.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1207,6 +1212,11 @@
               <FileName>BoardW25QXXBase.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\..\Driver\DriverBoard\BoardW25QXXBase.h</FilePath>
+            </File>
+            <File>
+              <FileName>BoardSDBase.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverBoard\BoardSDBase.h</FilePath>
             </File>
           </Files>
         </Group>
