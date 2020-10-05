@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 14:21:02
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-05 15:26:39
+**LastEditTime: 2020-10-05 19:15:28
 **FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\Driver\DriverMCU\MCU_Uart1.c
 **ModifyRecord1:    
 **ModifyRecord2:    
@@ -138,7 +138,7 @@ void MCU_Uart1Init(uint32_t baud, MCU_UART_LENGTH length, MCU_UART_STOPBIT stopB
     DMA_Init(DMA2_Stream7, &DMA_InitStructure);
 
     //清除DMA中断
-    DMA_ClearFlag(DMA2_Stream7, DMA_FLAG_TCIF4);
+    DMA_ClearFlag(DMA2_Stream7, DMA_FLAG_TCIF7);
 
     NVIC_InitStructure.NVIC_IRQChannel = DMA2_Stream7_IRQn;
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = MCU_DMA2_STREAM7_PREE_PRI;

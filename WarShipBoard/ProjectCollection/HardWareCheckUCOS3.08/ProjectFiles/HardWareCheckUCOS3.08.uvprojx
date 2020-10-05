@@ -1038,6 +1038,16 @@
               <FileType>5</FileType>
               <FilePath>..\..\..\Driver\DriverMCU\MCU_Flash.h</FilePath>
             </File>
+            <File>
+              <FileName>MCU_Uart2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Driver\DriverMCU\MCU_Uart2.c</FilePath>
+            </File>
+            <File>
+              <FileName>MCU_Uart3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Driver\DriverMCU\MCU_Uart3.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

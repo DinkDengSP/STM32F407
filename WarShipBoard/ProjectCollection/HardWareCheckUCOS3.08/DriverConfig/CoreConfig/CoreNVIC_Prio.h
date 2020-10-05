@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 21:50:02
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-10-05 15:23:27
+ *LastEditTime: 2020-10-05 19:08:15
  *FilePath: \HardWareCheckUCOS3.08\DriverConfig\CoreConfig\CoreNVIC_Prio.h
  *ModifyRecord1:    
 ******************************************************************/
@@ -21,10 +21,10 @@
 //中断子优先级
 #define MCU_DMA2_STREAM7_SUB_PRI            INT_SUB_PRI_0
 
-//中断抢占优先级,DMA 串口3
-#define MCU_DMA1_STREAM3_PREE_PRI           INT_PRE_PRI_1
+//中断抢占优先级,DMA 串口2
+#define MCU_DMA1_STREAM6_PREE_PRI           INT_PRE_PRI_1
 //中断子优先级
-#define MCU_DMA1_STREAM3_SUB_PRI            INT_SUB_PRI_1
+#define MCU_DMA1_STREAM6_SUB_PRI            INT_SUB_PRI_1
 
 
 /************************************会调用系统内核函数的中断优先级********************************/
@@ -40,6 +40,11 @@
 #define MCU_UART1_DMA_PREE_PRI              INT_PRE_PRI_3
 //中断子优先级
 #define MCU_UART1_DMA_SUB_PRI               INT_SUB_PRI_0
+
+//中断抢占优先级 串口2
+#define MCU_UART2_DMA_PREE_PRI              INT_PRE_PRI_3
+//中断子优先级
+#define MCU_UART2_DMA_SUB_PRI               INT_SUB_PRI_1
 
 //中断抢占优先级 串口3
 #define MCU_UART3_PREE_PRI                  INT_PRE_PRI_3
