@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 21:54:18
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-06 01:46:48
+**LastEditTime: 2020-10-06 13:05:43
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\AppSupport\AppTask\AppTaskDemo.c
 **ModifyRecord1:    
 ******************************************************************/
@@ -38,60 +38,6 @@ void ReflushMPU6050State()
     SEGGER_RTT_printf(0,"pitch: %d, roll: %d, yaw: %d\r\n",(int32_t)(pitch*100),(int32_t)(roll*100),(int32_t)(yaw*100));
 }
 
-//SD卡读取数据
-void BoardSD_ReadTest()
-{
-    uint8_t* readBuf = UserMemMalloc(MEM_SRAM_IS62,512);
-    uint16_t sectorAddr = MCU_RandomGetNextRangeReal(0,1000);
-    ServicePrintf("**************************1****************************** \r\n");
-    //读取数据
-    if(0 == BoardSD_ReadDisk(readBuf,sectorAddr,1))
-    {
-        ServicePrintf("BoardSD_ReadDisk Success,Sector = %d\r\n",sectorAddr);
-        for(uint16_t indexUtil = 0; indexUtil < 512; indexUtil++)
-        {
-            ServicePrintf("%d : 0X%02X ",indexUtil,readBuf[indexUtil]);
-        }
-        ServicePrintf("\r\n");
-    }
-    else
-    {
-        ServicePrintf("BoardSD_ReadDisk Failed,Sector = %d\r\n",sectorAddr);
-    }
-    ServicePrintf("**************************2****************************** \r\n");
-    //数据进行随机处理
-    for(uint16_t indexUtil = 0; indexUtil < 512; indexUtil++)
-    {
-        readBuf[indexUtil] = MCU_RandomGetNextRangeReal(0,255);
-    }
-    ServicePrintf("Random Sector = %d\r\n",sectorAddr);
-    for(uint16_t indexUtil = 0; indexUtil < 512; indexUtil++)
-    {
-        ServicePrintf("%d : 0X%02X ",indexUtil,readBuf[indexUtil]);
-    }
-    //数据写入
-    if(0 != BoardSD_WriteDisk(readBuf,sectorAddr,1))
-    {
-        ServicePrintf("BoardSD_WriteDisk Failed,Sector = %d\r\n",sectorAddr);
-    }
-    ServicePrintf("**************************3****************************** \r\n");
-    UserMemSet(readBuf,0,512);
-    if(0 == BoardSD_ReadDisk(readBuf,sectorAddr,1))
-    {
-        ServicePrintf("BoardSD_ReadDisk Success,Sector = %d\r\n",sectorAddr);
-        for(uint16_t indexUtil = 0; indexUtil < 512; indexUtil++)
-        {
-            ServicePrintf("%d : 0X%02X ",indexUtil,readBuf[indexUtil]);
-        }
-        ServicePrintf("\r\n");
-    }
-    else
-    {
-        ServicePrintf("BoardSD_ReadDisk Failed,Sector = %d\r\n",sectorAddr);
-    }
-    //释放内存
-    UserMemFree(MEM_SRAM_IS62,readBuf);
-}
 
 
 //任务函数
@@ -99,12 +45,10 @@ void TaskFuncAppDemo(void *p_arg)
 {
     OS_ERR err;
     p_arg = p_arg;
-    BoardSD_ReadTest();
     while(1)
     {
-        CoreDelayMs(500);
+        CoreDelayMs(1000);
         ReflushMPU6050State();
-        
     }
 }
 

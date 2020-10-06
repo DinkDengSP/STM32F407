@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 21:50:02
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-10-06 01:20:51
+ *LastEditTime: 2020-10-06 13:40:08
  *FilePath: \HardWareCheckUCOS3.08\DriverConfig\CoreConfig\CoreNVIC_Prio.h
  *ModifyRecord1:    
 ******************************************************************/
@@ -57,6 +57,15 @@
 #define MCU_UART3_SUB_PRI                   INT_SUB_PRI_1
 
 
+//中断抢占优先级 RTC ALARM
+#define MCU_RTC_ALARM_PREE_PRI              INT_PRE_PRI_3
+//中断子优先级 RTC
+#define MCU_RTC_ALARM_SUB_PRI               INT_SUB_PRI_3
+
+//中断抢占优先级 RTC WAKEUP
+#define MCU_RTC_WAKEUP_PREE_PRI             INT_PRE_PRI_3
+//中断子优先级 RTC
+#define MCU_RTC_WAKEUP_SUB_PRI              INT_SUB_PRI_3
 
 #endif
 

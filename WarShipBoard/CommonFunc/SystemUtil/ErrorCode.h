@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 14:16:48
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-10-05 14:07:47
+ *LastEditTime: 2020-10-06 13:25:23
  *FilePath: \HardWareCheckUCOS3.08d:\DinkGitHub\STM32F407\WarShipBoard\CommonFunc\SystemUtil\ErrorCode.h
  *ModifyRecord1:    
  *ModifyRecord2:    
@@ -32,6 +32,9 @@ typedef enum D_ERROR_CODE
     D_ERROR_CODE_MCU_FLASH_ADDR     = 0X0000000C,//flash地址不合标准
     D_ERROR_CODE_MCU_FLASH_ERASE    = 0X0000000D,//Flash擦除错误
     D_ERROR_CODE_MCU_FLASH_WRITE    = 0X0000000E,//flash写入失败
+    D_ERROR_CODE_MCU_RTC_LSE_START  = 0X0000000F,//RTC外部晶振启动失败
+    D_ERROR_CODE_MCU_RTC_SET_TIME   = 0X00000010,//设置时间失败
+    D_ERROR_CODE_MCU_RTC_SET_DATA   = 0X00000011,//设置日期失败
 }D_ERROR_CODE;
 
 #endif
