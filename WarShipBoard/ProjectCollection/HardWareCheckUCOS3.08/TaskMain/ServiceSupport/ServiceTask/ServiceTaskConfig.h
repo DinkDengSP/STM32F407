@@ -11,6 +11,8 @@
 #define __SERVICE_TASK_CONFIG_H_
 #include "BoardInc.h"
 #include "os.h"
+#include "GUI.h"
+#include "GUIDEMO.h"
 
 /**************************************************辅助任务***************************************************/
 //任务名称

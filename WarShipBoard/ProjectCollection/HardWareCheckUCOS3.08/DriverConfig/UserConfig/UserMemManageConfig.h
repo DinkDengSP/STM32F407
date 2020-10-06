@@ -3,7 +3,7 @@
  *Author: DengXiaoJun
  *Date: 2020-09-26 21:51:24
  *LastEditors: DengXiaoJun
- *LastEditTime: 2020-10-05 15:35:11
+ *LastEditTime: 2020-10-06 22:38:04
  *FilePath: \HardWareCheckUCOS3.08\DriverConfig\UserConfig\UserMemManageConfig.h
  *ModifyRecord1:    
 ******************************************************************/
@@ -22,7 +22,7 @@
 //内存块大小为32字节
 #define SRAM_CCM_BLOCK_SIZE			32 
 //最大管理内存,系统栈也是存放在CCM空间的
-#define SRAM_CCM_MAX_SIZE			45*1024 
+#define SRAM_CCM_MAX_SIZE			40*1024 
 //内存表大小
 #define SRAM_CCM_ALLOC_TABLE_SIZE	(SRAM_CCM_MAX_SIZE/SRAM_CCM_BLOCK_SIZE) 
 

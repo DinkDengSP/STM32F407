@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 14:03:05
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-06 01:24:33
+**LastEditTime: 2020-10-06 22:36:23
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\SystemTaskStart.c
 **ModifyRecord1:    
 **ModifyRecord2:    
@@ -39,6 +39,8 @@ const static OS_TASK_CREATE_CONFIG serviceTaskConfigArray[] = {
 const static OS_TASK_CREATE_CONFIG appTaskConfigArray[] = {
     //应用层任务Demo
     {&tcbTaskAppDemo,NAME_TASK_APP_DEMO,TaskFuncAppDemo,PRIO_TASK_APP_DEMO,&stackBufferTaskAppDemo[0],STK_SIZE_TASK_APP_DEMO / 10,STK_SIZE_TASK_APP_DEMO,2},
+    //应用层任务Gui Demo
+    {&tcbTaskAppGuiDemo,NAME_TASK_APP_GUI_DEMO,TaskFuncAppGuiDemo,PRIO_TASK_APP_GUI_DEMO,&stackBufferTaskAppGuiDemo[0],STK_SIZE_TASK_APP_GUI_DEMO / 10,STK_SIZE_TASK_APP_GUI_DEMO,2},
 };
 //应用任务的数量
 #define COUNT_APP_TASK (sizeof(appTaskConfigArray) / sizeof(appTaskConfigArray[0]))
@@ -229,9 +231,26 @@ void BoardDeviceInit(void)
             }
         } while (sdErrorCode != SD_OK);
         ConsoleSendCardMessage();
-    //独立看门狗中断
-        MCU_IWDG_Init(MCU_IWDG_DEFAULT_PRER,MCU_IWDG_DEFAULT_RLR);
-        
+    //LCD初始化
+        do
+        {
+            deviceInitResult = BoardLCD_Init();
+            if(deviceInitResult != D_ERROR_CODE_NONE)
+            {
+                //红灯闪烁
+                BoardLedToogle(BOARD_LED_RED);
+                //输出日志
+                SEGGER_RTT_printf(0,"BoardLCD_Init Failed,ErrorCode = 0X%08X\r\n",deviceInitResult);
+                //延时等待
+                CoreDelayMs(500);
+            }
+        } while (deviceInitResult != D_ERROR_CODE_NONE);
+    //STemWin必须开启CRC时钟,初始化会进行校验
+        RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_CRC,ENABLE);
+    //设置窗口标识
+	    WM_SetCreateFlags(WM_CF_MEMDEV);
+    //STemWin初始化
+	    GUI_Init();  			
 
     //系统初始化完成,关闭灯光
         BoardLedWrite(BOARD_LED_RED,OUTPUT_INVALID);

@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER,ARM_MATH_LOOPUNROLL,NDEBUG</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\Driver\DriverCore\CMSIS;..\..\..\Driver\DriverCore\Math;..\..\..\Driver\DriverCore\Startup;..\..\..\Driver\DriverCore\StdLib\Inc;..\..\..\Driver\DriverCore\StdLib\Src;..\..\..\Driver\DriverCore\StdLibSupport;..\..\..\Driver\DriverCore\UtilFunc;..\..\..\Driver\DriverMCU;..\..\..\Driver\DriverBoard;..\..\..\Driver\DriverBoard\MPU6050_eMPL;..\..\..\CommonFunc\ADT;..\..\..\CommonFunc\SystemUtil;..\..\..\CommonFunc\SeggerRTT;..\..\..\CommonFunc;..\..\..\CommonService;..\DriverConfig\CoreConfig;..\DriverConfig\BoardConfig;..\DriverConfig\OSConfig;..\DriverConfig\UserConfig;..\TaskMain;..\TaskMain\ServiceSupport\ServiceTask;..\TaskMain\ServiceSupport\ServiceImpl;..\TaskMain\ServiceSupport\ServiceIpc;..\TaskMain\ServiceSupport\ServiceUtil;..\TaskMain\AppSupport\AppTask;..\TaskMain\AppSupport\AppImpl;..\TaskMain\AppSupport\AppIpc;..\TaskMain\AppSupport\AppUtil;..\..\..\UCOS_3.08\uC-CPU\Port;..\..\..\UCOS_3.08\uC-CPU\Source;..\..\..\UCOS_3.08\uC-LIB\Port;..\..\..\UCOS_3.08\uC-LIB\Source;..\..\..\UCOS_3.08\uCOS-III\Port;..\..\..\UCOS_3.08\uCOS-III\Source</IncludePath>
+              <IncludePath>..\..\..\Driver\DriverCore\CMSIS;..\..\..\Driver\DriverCore\Math;..\..\..\Driver\DriverCore\Startup;..\..\..\Driver\DriverCore\StdLib\Inc;..\..\..\Driver\DriverCore\StdLib\Src;..\..\..\Driver\DriverCore\StdLibSupport;..\..\..\Driver\DriverCore\UtilFunc;..\..\..\Driver\DriverMCU;..\..\..\Driver\DriverBoard;..\..\..\Driver\DriverBoard\MPU6050_eMPL;..\..\..\CommonFunc\ADT;..\..\..\CommonFunc\SystemUtil;..\..\..\CommonFunc\SeggerRTT;..\..\..\CommonFunc;..\..\..\CommonService;..\DriverConfig\CoreConfig;..\DriverConfig\BoardConfig;..\DriverConfig\OSConfig;..\DriverConfig\UserConfig;..\TaskMain;..\TaskMain\ServiceSupport\ServiceTask;..\TaskMain\ServiceSupport\ServiceImpl;..\TaskMain\ServiceSupport\ServiceIpc;..\TaskMain\ServiceSupport\ServiceUtil;..\TaskMain\AppSupport\AppTask;..\TaskMain\AppSupport\AppImpl;..\TaskMain\AppSupport\AppIpc;..\TaskMain\AppSupport\AppUtil;..\..\..\UCOS_3.08\uC-CPU\Port;..\..\..\UCOS_3.08\uC-CPU\Source;..\..\..\UCOS_3.08\uC-LIB\Port;..\..\..\UCOS_3.08\uC-LIB\Source;..\..\..\UCOS_3.08\uCOS-III\Port;..\..\..\UCOS_3.08\uCOS-III\Source;..\..\..\Third_Party\STemWin\Config;..\..\..\Third_Party\STemWin\Inc;..\..\..\Third_Party\STemWin\Lib;..\..\..\Third_Party\STemWin\OS;..\..\..\Third_Party\STemWin\Demo</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -381,7 +381,7 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>CMSIS</GroupName>
+          <GroupName>Driver/DriverCore/CMSIS</GroupName>
           <Files>
             <File>
               <FileName>arm_common_tables.h</FileName>
@@ -436,7 +436,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Math</GroupName>
+          <GroupName>Driver/DriverCore/Math</GroupName>
           <Files>
             <File>
               <FileName>arm_cortexM4lf_math.lib</FileName>
@@ -446,7 +446,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Startup</GroupName>
+          <GroupName>Driver/DriverCore/Startup</GroupName>
           <Files>
             <File>
               <FileName>startup_stm32f40_41xxx.s</FileName>
@@ -456,7 +456,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>StdLibInc</GroupName>
+          <GroupName>Driver/DriverCore/StdLib/Inc</GroupName>
           <Files>
             <File>
               <FileName>misc.h</FileName>
@@ -631,7 +631,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>StdLibSrc</GroupName>
+          <GroupName>Driver/DriverCore/StdLib/Src</GroupName>
           <Files>
             <File>
               <FileName>misc.c</FileName>
@@ -831,7 +831,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>StdLibSupport</GroupName>
+          <GroupName>Driver/DriverCore/StdLibSupport</GroupName>
           <Files>
             <File>
               <FileName>stm32f4xx.h</FileName>
@@ -851,7 +851,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>UtilFunc</GroupName>
+          <GroupName>Driver/DriverCore/UtilFunc</GroupName>
           <Files>
             <File>
               <FileName>CoreDelay.h</FileName>
@@ -881,7 +881,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>DriverMCU</GroupName>
+          <GroupName>Driver/DriverMCU</GroupName>
           <Files>
             <File>
               <FileName>MCU_ADC.c</FileName>
@@ -1056,7 +1056,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>DriverBoard</GroupName>
+          <GroupName>Driver/DriverBoard</GroupName>
           <Files>
             <File>
               <FileName>BoardAT24CXX.c</FileName>
@@ -1218,10 +1218,20 @@
               <FileType>5</FileType>
               <FilePath>..\..\..\Driver\DriverBoard\BoardSDBase.h</FilePath>
             </File>
+            <File>
+              <FileName>BoardLCD.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Driver\DriverBoard\BoardLCD.c</FilePath>
+            </File>
+            <File>
+              <FileName>BoardLCD.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Driver\DriverBoard\BoardLCD.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>DriverBoard/MPU6050_eMPL</GroupName>
+          <GroupName>Driver/DriverBoard/MPU6050_eMPL</GroupName>
           <Files>
             <File>
               <FileName>dmpKey.h</FileName>
@@ -1554,10 +1564,10 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>BoardConfig</GroupName>
+          <GroupName>DriverConfig/BoardConfig</GroupName>
         </Group>
         <Group>
-          <GroupName>CoreConfig</GroupName>
+          <GroupName>DriverConfig/CoreConfig</GroupName>
           <Files>
             <File>
               <FileName>CoreNVIC_Prio.h</FileName>
@@ -1582,7 +1592,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>OSConfig</GroupName>
+          <GroupName>DriverConfig/OSConfig</GroupName>
           <Files>
             <File>
               <FileName>cpu_cfg.h</FileName>
@@ -1617,7 +1627,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>UserConfig</GroupName>
+          <GroupName>DriverConfig/UserConfig</GroupName>
           <Files>
             <File>
               <FileName>UserMemManageConfig.h</FileName>
@@ -1647,7 +1657,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>ServiceTask</GroupName>
+          <GroupName>TaskMain/ServiceSupport/ServiceTask</GroupName>
           <Files>
             <File>
               <FileName>ServiceTaskConfig.h</FileName>
@@ -1662,7 +1672,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>ServiceImpl</GroupName>
+          <GroupName>TaskMain/ServiceSupport/ServiceImpl</GroupName>
           <Files>
             <File>
               <FileName>ServiceImplHeart.c</FileName>
@@ -1677,13 +1687,13 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>ServiceIpc</GroupName>
+          <GroupName>TaskMain/ServiceSupport/ServiceIpc</GroupName>
         </Group>
         <Group>
-          <GroupName>ServiceUtil</GroupName>
+          <GroupName>TaskMain/ServiceSupport/ServiceUtil</GroupName>
         </Group>
         <Group>
-          <GroupName>AppTask</GroupName>
+          <GroupName>TaskMain/AppSupport/AppTask</GroupName>
           <Files>
             <File>
               <FileName>AppTaskConfig.h</FileName>
@@ -1695,16 +1705,711 @@
               <FileType>1</FileType>
               <FilePath>..\TaskMain\AppSupport\AppTask\AppTaskDemo.c</FilePath>
             </File>
+            <File>
+              <FileName>AppTaskGuiDemo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TaskMain\AppSupport\AppTask\AppTaskGuiDemo.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>AppImpl</GroupName>
+          <GroupName>TaskMain/AppSupport/AppImpl</GroupName>
         </Group>
         <Group>
-          <GroupName>AppIpc</GroupName>
+          <GroupName>TaskMain/AppSupport/AppIpc</GroupName>
         </Group>
         <Group>
-          <GroupName>AppUtil</GroupName>
+          <GroupName>TaskMain/AppSupport/AppUtil</GroupName>
+        </Group>
+        <Group>
+          <GroupName>Third_Party/STemWin/Config</GroupName>
+          <Files>
+            <File>
+              <FileName>GUIConf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Config\GUIConf.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIConf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Config\GUIConf.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_Template.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Config\GUIDRV_Template.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_Template.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Config\GUIDRV_Template.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCDConf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Config\LCDConf.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCDConf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Config\LCDConf.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_X_Touch_Analog.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Config\GUI_X_Touch_Analog.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Third_Party/STemWin/Inc</GroupName>
+          <Files>
+            <File>
+              <FileName>BUTTON.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\BUTTON.h</FilePath>
+            </File>
+            <File>
+              <FileName>BUTTON_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\BUTTON_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>CALENDAR.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\CALENDAR.h</FilePath>
+            </File>
+            <File>
+              <FileName>CHECKBOX.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\CHECKBOX.h</FilePath>
+            </File>
+            <File>
+              <FileName>CHECKBOX_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\CHECKBOX_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>CHOOSECOLOR.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\CHOOSECOLOR.h</FilePath>
+            </File>
+            <File>
+              <FileName>CHOOSEFILE.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\CHOOSEFILE.h</FilePath>
+            </File>
+            <File>
+              <FileName>DIALOG.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\DIALOG.h</FilePath>
+            </File>
+            <File>
+              <FileName>DIALOG_Intern.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\DIALOG_Intern.h</FilePath>
+            </File>
+            <File>
+              <FileName>DROPDOWN.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\DROPDOWN.h</FilePath>
+            </File>
+            <File>
+              <FileName>DROPDOWN_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\DROPDOWN_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>EDIT.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\EDIT.h</FilePath>
+            </File>
+            <File>
+              <FileName>EDIT_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\EDIT_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>FRAMEWIN.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\FRAMEWIN.h</FilePath>
+            </File>
+            <File>
+              <FileName>FRAMEWIN_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\FRAMEWIN_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>Global.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\Global.h</FilePath>
+            </File>
+            <File>
+              <FileName>GRAPH.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GRAPH.h</FilePath>
+            </File>
+            <File>
+              <FileName>GRAPH_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GRAPH_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_ARRAY.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_ARRAY.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_ARRAY_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_ARRAY_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_BMP_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_BMP_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_ConfDefaults.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_ConfDefaults.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_Debug.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_Debug.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_FontIntern.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_FontIntern.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_GIF_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_GIF_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_HOOK.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_HOOK.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_JPEG_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_JPEG_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_SetOrientation.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_SetOrientation.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_SetOrientationCX.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_SetOrientationCX.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_SIM_Win32.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_SIM_Win32.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_SPRITE_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_SPRITE_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_Type.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_Type.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_Version.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_Version.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_VNC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUI_VNC.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_DCache.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_DCache.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_DCache_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_DCache_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_Dist.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_Dist.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_FlexColor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_FlexColor.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_FlexColor_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_FlexColor_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_Lin.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_Lin.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_Lin_Opt_8.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_Lin_Opt_8.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_Lin_Opt_16.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_Lin_Opt_16.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_Lin_Opt_24.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_Lin_Opt_24.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_Lin_Opt_32.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_Lin_Opt_32.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_Lin_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_Lin_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_NoOpt_1_8.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_NoOpt_1_8.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_Template.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_Template.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_TemplateI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_TemplateI.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_TemplateI_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIDRV_TemplateI_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIMTDRV_TangoC32.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUIMTDRV_TangoC32.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUITDRV_ADS7846.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\GUITDRV_ADS7846.h</FilePath>
+            </File>
+            <File>
+              <FileName>HEADER.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\HEADER.h</FilePath>
+            </File>
+            <File>
+              <FileName>HEADER_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\HEADER_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>ICONVIEW.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\ICONVIEW.h</FilePath>
+            </File>
+            <File>
+              <FileName>ICONVIEW_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\ICONVIEW_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>IMAGE.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\IMAGE.h</FilePath>
+            </File>
+            <File>
+              <FileName>IMAGE_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\IMAGE_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>KNOB.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\KNOB.h</FilePath>
+            </File>
+            <File>
+              <FileName>KNOB_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\KNOB_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\LCD.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_ConfDefaults.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\LCD_ConfDefaults.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\LCD_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_Protected.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\LCD_Protected.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_SIM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\LCD_SIM.h</FilePath>
+            </File>
+            <File>
+              <FileName>LISTBOX.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\LISTBOX.h</FilePath>
+            </File>
+            <File>
+              <FileName>LISTBOX_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\LISTBOX_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>LISTVIEW.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\LISTVIEW.h</FilePath>
+            </File>
+            <File>
+              <FileName>LISTVIEW_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\LISTVIEW_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>LISTWHEEL.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\LISTWHEEL.h</FilePath>
+            </File>
+            <File>
+              <FileName>LISTWHEEL_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\LISTWHEEL_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>MENU.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\MENU.h</FilePath>
+            </File>
+            <File>
+              <FileName>MENU_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\MENU_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>MESSAGEBOX.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\MESSAGEBOX.h</FilePath>
+            </File>
+            <File>
+              <FileName>MULTIEDIT.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\MULTIEDIT.h</FilePath>
+            </File>
+            <File>
+              <FileName>MULTIPAGE.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\MULTIPAGE.h</FilePath>
+            </File>
+            <File>
+              <FileName>MULTIPAGE_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\MULTIPAGE_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>PROGBAR.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\PROGBAR.h</FilePath>
+            </File>
+            <File>
+              <FileName>PROGBAR_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\PROGBAR_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>RADIO.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\RADIO.h</FilePath>
+            </File>
+            <File>
+              <FileName>RADIO_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\RADIO_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>SCROLLBAR.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\SCROLLBAR.h</FilePath>
+            </File>
+            <File>
+              <FileName>SCROLLBAR_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\SCROLLBAR_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>SLIDER.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\SLIDER.h</FilePath>
+            </File>
+            <File>
+              <FileName>SLIDER_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\SLIDER_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>SPINBOX.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\SPINBOX.h</FilePath>
+            </File>
+            <File>
+              <FileName>SPINBOX_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\SPINBOX_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>TEXT.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\TEXT.h</FilePath>
+            </File>
+            <File>
+              <FileName>TEXT_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\TEXT_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>TREEVIEW.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\TREEVIEW.h</FilePath>
+            </File>
+            <File>
+              <FileName>TREEVIEW_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\TREEVIEW_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>WIDGET.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\WIDGET.h</FilePath>
+            </File>
+            <File>
+              <FileName>WINDOW_Private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\WINDOW_Private.h</FilePath>
+            </File>
+            <File>
+              <FileName>WM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\WM.h</FilePath>
+            </File>
+            <File>
+              <FileName>WM_GUI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\WM_GUI.h</FilePath>
+            </File>
+            <File>
+              <FileName>WM_Intern.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Inc\WM_Intern.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Third_Party/STemWin/Lib</GroupName>
+          <Files>
+            <File>
+              <FileName>STemWin528_CM4_OS_Keil.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Lib\STemWin528_CM4_OS_Keil.lib</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Third_Party/STemWin/OS</GroupName>
+          <Files>
+            <File>
+              <FileName>GUI_X_OS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\OS\GUI_X_OS.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Third_Party/STemWin/Demo</GroupName>
+          <Files>
+            <File>
+              <FileName>GUIDEMO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO.h</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_AntialiasedText.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_AntialiasedText.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Automotive.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Automotive.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_BarGraph.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_BarGraph.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Bitmap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Bitmap.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_ColorBar.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_ColorBar.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Conf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Conf.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Cursor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Cursor.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Fading.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Fading.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Graph.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Graph.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_IconView.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_IconView.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_ImageFlow.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_ImageFlow.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Intro.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Intro.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Listview.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Listview.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_RadialMenu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_RadialMenu.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Resource.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Resource.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Skinning.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Skinning.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Speed.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Speed.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Speedometer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Speedometer.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Start.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Start.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Touch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Touch.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_TransparentDialog.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_TransparentDialog.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_Treeview.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_Treeview.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_VScreen.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_VScreen.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_WashingMachine.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_WashingMachine.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDEMO_ZoomAndRotate.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Third_Party\STemWin\Demo\GUIDEMO_ZoomAndRotate.c</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>

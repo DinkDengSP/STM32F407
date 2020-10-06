@@ -3,7 +3,7 @@
 **Author: DengXiaoJun
 **Date: 2020-09-26 21:53:16
 **LastEditors: DengXiaoJun
-**LastEditTime: 2020-10-03 23:37:20
+**LastEditTime: 2020-10-06 15:02:18
 **FilePath: \HardWareCheckUCOS3.08\TaskMain\ServiceSupport\ServiceTask\ServiceTaskHeart.c
 **ModifyRecord1:    
 ******************************************************************/
@@ -26,8 +26,6 @@ void TaskFuncServiceHeart(void *p_arg)
     {
         CoreDelayMs(500);
         BoardLedToogle(BOARD_LED_GREEN);
-        //独立看门狗喂狗
-        MCU_IWDG_Feed();
     }
 }
 
